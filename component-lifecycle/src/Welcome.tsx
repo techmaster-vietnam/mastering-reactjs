@@ -3,39 +3,17 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
-interface Data {
-  count: number;
-}
-
-interface State {
-  count: number;
-  data: Data;
-}
-
-class App extends React.Component {
+class Welcome extends React.Component {
 
   constructor(props: any) {
     super(props)
     this.state = {
       count: 0,
-      data: {count: 0}
+      data: {count: 0, throwError: false}
     }
   }
 
-  setCount(count: number) {
-    this.setState({
-      count: count
-    });
-  }
-
-  setData(data: Data) {
-    this.setState({
-      data: data
-    });
-  }
-
   public render() {
-    const {count, data} = this.state as State;
     return (
       <>
         <div>
@@ -48,12 +26,7 @@ class App extends React.Component {
         </div>
         <h1>Vite + React</h1>
         <div className="card">
-          <button onClick={() => this.setCount(count + 1)}>
-            count is {count}
-          </button>
-          <button onClick={() => this.setData({count: data.count + 1})}>
-            data is data ({data.count})
-          </button>
+          <h1>Welcome</h1>
           <p>
             Edit <code>src/App.tsx</code> and save to test HMR
           </p>
@@ -66,4 +39,4 @@ class App extends React.Component {
   }
 }
 
-export default App
+export default Welcome;
