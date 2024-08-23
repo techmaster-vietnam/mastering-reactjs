@@ -1,23 +1,8 @@
-import { useEffect, useMemo, useState } from 'react'
 import reactLogo from './assets/react.svg'
+import { PageProps } from './common'
 import viteLogo from '/vite.svg'
-import './App.css'
 
-const doCalculate = (num: number) => {
-  console.log("Calculating...");
-  for (let i = 0; i < 1000000000; i++) {
-    num += 1;
-  }
-  return num;
-};
-
-function App() {
-  const [count, setCount] = useState(0);
-
-  useEffect(() => {
-    throw new Error("test")
-  }, []);
-
+const Entry: React.FC<PageProps> = ({ setCurrentViewURI }) => {
   return (
     <>
       <div>
@@ -30,12 +15,12 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
+        <button onClick={() => setCurrentViewURI("/page1")}>
+          Move to Page 1
         </button>
-        <p>
-          calculation: {calculation}
-        </p>
+        <button onClick={() => setCurrentViewURI("/page2")}>
+          Move to Page 2
+        </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
@@ -47,4 +32,4 @@ function App() {
   )
 }
 
-export default App
+export default Entry
