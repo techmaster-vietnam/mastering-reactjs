@@ -1,13 +1,16 @@
-import { PageProps } from "./common"
+import { useNavigate } from 'react-router-dom';
 
-const Page1: React.FC<PageProps> = ({ setCurrentViewURI }) => {
+function Page1() {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <h1>Techmaster</h1>
       <div className="card">
         <p>Page 2</p>
-        <button onClick={() => setCurrentViewURI("/page1")}>
-          Back to Page 1
+        <button onClick={() => navigate(-1)}>
+          Back
         </button>
       </div>
     </>

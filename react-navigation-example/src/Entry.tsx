@@ -1,8 +1,11 @@
 import reactLogo from './assets/react.svg'
-import { PageProps } from './common'
 import viteLogo from '/vite.svg'
+import { useNavigate } from 'react-router-dom';
 
-const Entry: React.FC<PageProps> = ({ setCurrentViewURI }) => {
+function Entry() {
+
+  const navigate = useNavigate();
+
   return (
     <>
       <div>
@@ -15,11 +18,14 @@ const Entry: React.FC<PageProps> = ({ setCurrentViewURI }) => {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCurrentViewURI("/page1")}>
+        <button onClick={() => navigate("/page1")}>
           Move to Page 1
         </button>
-        <button onClick={() => setCurrentViewURI("/page2")}>
+        <button onClick={() => navigate("/page2")}>
           Move to Page 2
+        </button>
+        <button onClick={() => navigate(-1)}>
+          Back
         </button>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
