@@ -1,4 +1,3 @@
-// src/components/ActivateAccount.tsx
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, useLocation } from 'react-router-dom';
